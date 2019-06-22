@@ -49,3 +49,38 @@ Lookup and insertion times 0(1)
 */
 
 // later, refactor with JavaScript Map
+
+// ---------------------------------------------------------------
+
+/* Prompt
+Given a collection of numbers and a target sum, write a function that will return true or false indicating whether any pair of numbers in the array adds to that sum.
+
+Example: [1, 2, 3, 4, 5], 5 => True
+
+Questions:
+Will the numbers be given to the function in an array?
+Can I assume the numbers and the sum will always be integers? Positive?
+Will the array be sorted?
+
+Edge Cases:
+What if array is empty?
+
+
+Approach 1: Nested For Loops, O(n^2) time
+
+Approach 2: Ratcheting, O(n) time, for a sorted array
+
+Big O:
+
+*/
+
+pairSum = (numArray, targetSum) => {
+  let leftIndex = 0
+  let rightIndex = numArray.length - 1
+  while(leftIndex !== rightIndex) {
+    let sum = numArray[leftIndex] + numArray[rightIndex]
+    if (sum === targetSum) return true
+    else if (sum > targetSum) rightIndex--
+    else leftIndex++
+  }
+}

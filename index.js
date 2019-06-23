@@ -53,14 +53,13 @@ Lookup and insertion times 0(1)
 // ---------------------------------------------------------------
 
 /* Prompt
-Given a collection of numbers and a target sum, write a function that will return true or false indicating whether any pair of numbers in the array adds to that sum.
+Given a collection of sorted numbers and a target sum, write a function that will return true or false indicating whether any pair of numbers in the array adds to that sum.
 
 Example: [1, 2, 3, 4, 5], 5 => True
 
 Questions:
 Will the numbers be given to the function in an array?
 Can I assume the numbers and the sum will always be integers? Positive?
-Will the array be sorted?
 
 Edge Cases:
 What if array is empty?
@@ -82,5 +81,17 @@ pairSum = (numArray, targetSum) => {
     if (sum === targetSum) return true
     else if (sum > targetSum) rightIndex--
     else leftIndex++
+  }
+}
+
+// What if the array was not sorted?
+
+pairSumUnsorted = (numArray, targetSum) => {
+  let complementSet = new Set
+  for(let i = 0; i < numArray.length; i++) {
+    let value = numArray[i]
+    let complement = targetSum - numArray[i]
+    if (complementSet.has(complement)) return true
+    else complementSet.add(complement)
   }
 }

@@ -69,29 +69,30 @@ Approach 1: Nested For Loops, O(n^2) time
 
 Approach 2: Ratcheting, O(n) time, for a sorted array
 
-Big O:
-
 */
 
 pairSum = (numArray, targetSum) => {
-  let leftIndex = 0
-  let rightIndex = numArray.length - 1
-  while(leftIndex !== rightIndex) {
-    let sum = numArray[leftIndex] + numArray[rightIndex]
-    if (sum === targetSum) return true
-    else if (sum > targetSum) rightIndex--
-    else leftIndex++
+  let leftIndex = 0;
+  let rightIndex = numArray.length - 1;
+  while (leftIndex !== rightIndex) {
+    let sum = numArray[leftIndex] + numArray[rightIndex];
+    if (sum === targetSum) return true;
+    else if (sum > targetSum) rightIndex--;
+    else leftIndex++;
   }
-}
+  return false;
+};
 
-// What if the array was not sorted?
+// What if the array is not sorted?
+// Big O: O(n)
 
 pairSumUnsorted = (numArray, targetSum) => {
-  let complementSet = new Set
-  for(let i = 0; i < numArray.length; i++) {
-    let value = numArray[i]
-    let complement = targetSum - numArray[i]
-    if (complementSet.has(complement)) return true
-    else complementSet.add(complement)
+  let complementSet = new Set();
+  for (let i = 0; i < numArray.length; i++) {
+    let value = numArray[i];
+    let complement = targetSum - numArray[i];
+    if (complementSet.has(complement)) return true;
+    else complementSet.add(complement);
   }
-}
+  return false;
+};

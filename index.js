@@ -150,6 +150,64 @@ linkedListLoopCheck = (head) => {
   const tortoise = head
   const hare = head.next.next
   if(tortoise === hare) return true
-  else if (head.next.next) return linkedListLoopCheck(head.next)
+  else if (head.next.next.next) return linkedListLoopCheck(head.next)
   return false
 }
+
+// ---------------------------------------------------------------
+
+// ! IN PLACE ROTATION
+
+/* Prompt
+Rotate an image 90 degrees clockwise, in place.
+
+Example:
+[
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8]
+]
+=>
+[
+  [6, 3, 0],
+  [7, 4, 1],
+  [8, 5, 2]
+]
+
+Questions:
+How will I receive the image? Answer: Array of arrays. Matrix.
+Will the image be square?
+
+Edge Cases:
+Empty matrix
+
+
+Approach 1: NOT in place.
+- iterate over outer array, shift off each first num, and push it onto i'th array in new matrix. repeat this process until original matrix empty.
+- Iterate over final matrix, reversing each subarray.
+- Return matrix
+Big O: O(n) time, O(n) space
+
+Approach 2: In place.
+! Big O: O(n) time? O(1) space
+
+*/
+
+rotationNotInPlace = (matrix) => {
+  const rotatedMatrix = []
+  for (let i = 0; i < matrix.length; i++) {
+    if(i === 0) rotatedMatrix.push([])
+    rotatedMatrix[i].push(matrix[i].shift)
+  }
+  for(let i = 0; i < rotatedMatrix.length; i++) {
+    rotatedMatrix[i].reverse
+  }
+  return rotatedMatrix
+}
+
+// inPlaceRotation = (matrix) => {
+//   let firstMovedVal
+//   let secondMovedVal
+
+//   return matrix
+// }

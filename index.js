@@ -117,7 +117,6 @@ Big O: O(n^2) time, 0(1) space
 
 */
 
-
 multiDimSum = (array) => {
   let sum = 0
   for(let i = 0; i < array.length; i++) {
@@ -127,3 +126,30 @@ multiDimSum = (array) => {
   return sum
 }
 
+
+// ---------------------------------------------------------------
+
+// List Looper
+
+/* Prompt
+Given a singly linked list, check if it has a loop.
+
+Example: a -> b -> c -> a => true
+
+Questions:
+
+Edge Cases:
+
+Optimized Approach: Tortoise and Hare
+Big O: O(n) time, 0(1) space
+
+
+*/
+
+linkedListLoopCheck = (head) => {
+  const tortoise = head
+  const hare = head.next.next
+  if(tortoise === hare) return true
+  else if (head.next.next) return linkedListLoopCheck(head.next)
+  return false
+}

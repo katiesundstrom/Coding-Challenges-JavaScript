@@ -65,9 +65,9 @@ Edge Cases:
 What if array is empty?
 
 
-Approach 1: Nested For Loops, O(n^2) time
+Approach 1: Nested For Loops, O(n^2) time, O(1) space
 
-Approach 2: Ratcheting, O(n) time, for a sorted array
+Approach 2: Ratcheting (with a sorted array), O(n) time, O(1) space
 
 */
 
@@ -84,15 +84,46 @@ pairSum = (numArray, targetSum) => {
 };
 
 // What if the array is not sorted?
-// Big O: O(n)
+// Big O: O(n) time and O(n) space
 
-pairSumUnsorted = (numArray, targetSum) => {
-  let complementSet = new Set();
-  for (let i = 0; i < numArray.length; i++) {
-    let value = numArray[i];
-    let complement = targetSum - numArray[i];
-    if (complementSet.has(complement)) return true;
-    else complementSet.add(complement);
+pairSumUnsorted = (array,targetSum) => {
+  let complementSet = new Set()
+  for(let i = 0; i < array.length; i++) {
+    if(complementSet.has(targetSum - array[i])) return true
+    else complementSet.add(array[i])
   }
-  return false;
-};
+  return false
+}
+
+// ---------------------------------------------------------------
+
+// MULTIDIMSUM
+
+/* Prompt
+Given an array of numbers that may be nested multiple levels deep, return the sum of all of the numbers in the arrays.
+
+Example: [1, [2, [3, 4]], 5] => 15
+
+Questions:
+Are all of the items in all of the arrays guaranteed to be numbers?
+
+Edge Cases:
+Empty array
+
+Approach 1: Recursion
+Big O: O(n^2) time, 0(1) space
+
+! Approach 2: CAN WE IMPROVE THIS TIME COMPLEXITY?
+
+*/
+
+
+multiDimSum = (array) => {
+  let sum = 0
+  for(let i = 0; i < array.length; i++) {
+    if (Array.isArray(array[i])) return sum += multiDimSum(array[i])
+    else sum += array[i]
+  }
+  return sum
+}
+

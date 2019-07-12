@@ -86,14 +86,14 @@ pairSum = (numArray, targetSum) => {
 // What if the array is not sorted?
 // Big O: O(n) time and O(n) space
 
-pairSumUnsorted = (array,targetSum) => {
-  let complementSet = new Set()
-  for(let i = 0; i < array.length; i++) {
-    if(complementSet.has(targetSum - array[i])) return true
-    else complementSet.add(array[i])
+pairSumUnsorted = (array, targetSum) => {
+  let complementSet = new Set();
+  for (let i = 0; i < array.length; i++) {
+    if (complementSet.has(targetSum - array[i])) return true;
+    else complementSet.add(array[i]);
   }
-  return false
-}
+  return false;
+};
 
 // ---------------------------------------------------------------
 
@@ -117,15 +117,14 @@ Big O: O(n^2) time, 0(1) space
 
 */
 
-multiDimSum = (array) => {
-  let sum = 0
-  for(let i = 0; i < array.length; i++) {
-    if (Array.isArray(array[i])) return sum += multiDimSum(array[i])
-    else sum += array[i]
+multiDimSum = array => {
+  let sum = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (Array.isArray(array[i])) return (sum += multiDimSum(array[i]));
+    else sum += array[i];
   }
-  return sum
-}
-
+  return sum;
+};
 
 // ---------------------------------------------------------------
 
@@ -146,13 +145,13 @@ Big O: O(n) time, 0(1) space
 
 */
 
-linkedListLoopCheck = (head) => {
-  const tortoise = head
-  const hare = head.next.next
-  if(tortoise === hare) return true
-  else if (head.next.next.next) return linkedListLoopCheck(head.next)
-  return false
-}
+linkedListLoopCheck = head => {
+  const tortoise = head;
+  const hare = head.next.next;
+  if (tortoise === hare) return true;
+  else if (head.next.next.next) return linkedListLoopCheck(head.next);
+  return false;
+};
 
 // ---------------------------------------------------------------
 
@@ -193,17 +192,17 @@ Approach 2: In place.
 
 */
 
-rotationNotInPlace = (matrix) => {
-  const rotatedMatrix = []
+rotationNotInPlace = matrix => {
+  const rotatedMatrix = [];
   for (let i = 0; i < matrix.length; i++) {
-    if(i === 0) rotatedMatrix.push([])
-    rotatedMatrix[i].push(matrix[i].shift)
+    if (i === 0) rotatedMatrix.push([]);
+    rotatedMatrix[i].push(matrix[i].shift);
   }
-  for(let i = 0; i < rotatedMatrix.length; i++) {
-    rotatedMatrix[i].reverse
+  for (let i = 0; i < rotatedMatrix.length; i++) {
+    rotatedMatrix[i].reverse;
   }
-  return rotatedMatrix
-}
+  return rotatedMatrix;
+};
 
 // inPlaceRotation = (matrix) => {
 //   let firstMovedVal
@@ -237,6 +236,23 @@ Big O space:
 
 */
 
-reverseWords = (message) => {
+// helper function, reverseChars
 
-}
+reverseCharacters = (message, leftIdx, rightIdx) => {
+  while (leftIdx < rightIdx) {
+    let letter = message[leftIdx];
+    message[leftIndex] = message[rightIdx];
+    message[rightIdx] = letter;
+    leftIdx++;
+    rightIdx--;
+  }
+};
+
+reverseWords = message => {
+  let startIdx = 0;
+  for (let i = 0; i < message.length; i++) {
+    if (message[i] === ' ') {
+      reverseCharacters(message);
+    }
+  }
+};

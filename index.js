@@ -211,3 +211,32 @@ rotationNotInPlace = (matrix) => {
 
 //   return matrix
 // }
+
+// ---------------------------------------------------------------
+
+/*
+Write a function reverseWords() that takes a message as an array of characters and reverses the order of the words in place.
+
+When writing your function, assume the message contains only letters and spaces, and all words are separated by one space.
+
+const message = [ 'c', 'a', 'k', 'e', ' ',
+                'p', 'o', 'u', 'n', 'd', ' ',
+                's', 't', 'e', 'a', 'l' ];
+
+reverseWords(message);
+
+console.log(message.join(''));
+Prints: 'steal pound cake'
+
+Approach:
+reverse the entire array; spaces will be in place, and words will be backwards
+reverse each word
+
+Big O time:
+Big O space:
+
+*/
+
+reverseWords = (message) => {
+
+}

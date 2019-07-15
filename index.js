@@ -268,6 +268,8 @@ balanceParens('[](){}'); // true
 balanceParens('[({})]');   // true
 balanceParens('[(]{)}'); // false
 
+O(n) time
+O(n) space
 */
 
 balancedBrackets = string => {
@@ -286,5 +288,5 @@ balancedBrackets = string => {
       }
     }
   }
-  return (stack.length === 0);
+  return stack.length === 0;
 };

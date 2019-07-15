@@ -248,6 +248,7 @@ reverseCharacters = (message, leftIdx, rightIdx) => {
   }
 };
 
+//! this function is not yet complete
 reverseWords = message => {
   let startIdx = 0;
   for (let i = 0; i < message.length; i++) {
@@ -256,3 +257,19 @@ reverseWords = message => {
     }
   }
 };
+
+// ---------------------------------------------------------------
+/*
+write a function that takes a string of text and returns true if
+the parentheses, brackets, and braces are balanced and false otherwise.
+
+Example:
+balanceParens('[](){}'); // true
+balanceParens('[({})]');   // true
+balanceParens('[(]{)}'); // false
+
+*/
+
+balancedBrackets = (string) => {
+  
+}

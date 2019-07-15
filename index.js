@@ -290,3 +290,20 @@ balancedBrackets = string => {
   }
   return stack.length === 0;
 };
+
+// ---------------------------------------------------------------
+/*
+Write a function to delete a node from a singly linked list. The function will take in the node to delete.
+*/
+
+class LinkedListNode {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+function deleteNode(nodeToDelete) {
+  nodeToDelete.value = nodeToDelete.next.value;
+  nodeToDelete.next = nodeToDelete.next.next;
+}

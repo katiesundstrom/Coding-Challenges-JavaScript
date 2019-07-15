@@ -270,6 +270,21 @@ balanceParens('[(]{)}'); // false
 
 */
 
-balancedBrackets = (string) => {
-  
-}
+balancedBrackets = string => {
+  let openBrackets = ['(', '{', '['];
+  let closeBrackets = [')', '}', ']'];
+  let bracketPairs = { ')': '(', '}': '{', ']': '[' };
+  let stack = [];
+
+  for (let i = 0; i < string.length; i++) {
+    if (openBrackets.includes(string[i])) {
+      stack.push(string[i]);
+    }
+    if (closeBrackets.includes(string[i])) {
+      if (!stack.length || stack.pop() !== bracketPairs[string[i]]) {
+        return false;
+      }
+    }
+  }
+  return (stack.length === 0);
+};

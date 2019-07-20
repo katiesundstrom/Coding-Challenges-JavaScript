@@ -332,6 +332,9 @@ const breadthFirstSearch(node) {
 You have an array of integers, and for each index you want to find the product of every integer except the integer at that index.
 
 Write a function getProductsOfAllIntsExceptAtIndex() that takes an array of integers and returns an array of the products.
+
+Big O Time: O(n)
+Big O Space: O(n)
 */
 
 function getProductsOfAllIntsExceptAtIndex(intArray) {

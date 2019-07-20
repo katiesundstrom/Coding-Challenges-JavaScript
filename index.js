@@ -331,6 +331,24 @@ const breadthFirstSearch(node) {
 /*
 You have an array of integers, and for each index you want to find the product of every integer except the integer at that index.
 
-Write a function getProducts() that takes an array of integers and returns an array of the products.
+Write a function getProductsOfAllIntsExceptAtIndex() that takes an array of integers and returns an array of the products.
 */
 
+function getProductsOfAllIntsExceptAtIndex(intArray) {
+  if (intArray.length < 2) {
+    throw new error('Getting the product of numbers at other indices requires at least 2 numbers')
+  }
+
+    let products = [1]
+    for (let i = 1; i < intArray.length; i++) {
+      products[i] = products[i-1]*intArray[i-1]
+    }
+
+    let product = 1
+    for(let i = intArray.length - 2; i >= 0; i--) {
+      product *= intArray[i+1]
+      products[i] = products[i]*product
+    }
+
+    return products;
+  }

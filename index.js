@@ -307,3 +307,30 @@ function deleteNode(nodeToDelete) {
   nodeToDelete.value = nodeToDelete.next.value;
   nodeToDelete.next = nodeToDelete.next.next;
 }
+
+// ---------------------------------------------------------------
+/*
+Write a function to reverse a linked list in place.
+*/
+
+
+// ---------------------------------------------------------------
+
+/*
+Write a function to complete a breadth first search of a binary tree.
+
+*/
+
+const breadthFirstSearch(node) {
+  let queue = [this]
+
+}
+
+// ---------------------------------------------------------------
+
+/*
+You have an array of integers, and for each index you want to find the product of every integer except the integer at that index.
+
+Write a function getProducts() that takes an array of integers and returns an array of the products.
+*/
+

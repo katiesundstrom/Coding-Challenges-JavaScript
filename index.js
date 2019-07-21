@@ -363,8 +363,8 @@ function getProductsOfAllIntsExceptAtIndex(intArray) {
 
 A tree is "superbalanced" if the difference between the depths of any two leaf nodes ↴ is no greater than one.
 
-Big O Time: O()
-Big O Space: O()
+Big O Time: O(n^2)
+Big O Space: O(n)
 */
 
 class BinaryTreeNode {

@@ -367,4 +367,46 @@ Big O Time: O()
 Big O Space: O()
 */
 
+class BinaryTreeNode {
+  constructor(value) {
+    this.value = value;
+    this.left  = null;
+    this.right = null;
+  }
+
+  insertLeft(value) {
+    this.left = new BinaryTreeNode(value);
+    return this.left;
+  }
+
+  insertRight(value) {
+    this.right = new BinaryTreeNode(value);
+    return this.right;
+  }
+}
+
+function isBalanced(treeRoot) {
+
+  let queue = [[treeRoot, 0]]
+  let leafDepthsArray = []
+
+  while (queue.length) {
+    let [node, depth] = queue.shift()
+    if (node.left) {
+      queue.push([node.left, depth + 1])
+    }
+    if (node.right) {
+      queue.push([node.right, depth + 1])
+    }
+    else {
+      leafDepthsArray.push(depth)
+    }
+    leafDepthsArray.sort()
+    if (leafDepthsArray[leafDepthsArray.length-1] - leafDepthsArray[0] > 1) {
+      return false
+    }
+  }
+
+  return true;
+}
 

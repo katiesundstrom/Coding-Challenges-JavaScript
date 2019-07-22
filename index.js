@@ -430,3 +430,24 @@ Big O Space: O()
 */
 
 
+function hasPalindromePermutation(string) {
+  let memo = {}
+    for (let i = 0; i < string.length; i++) {
+      let char = string[i]
+      if (!memo[char]) {
+        memo[char] = 1
+      } else {
+        memo[char]++
+      }
+    }
+    let number = 0
+    let nums = Object.values(memo)
+    nums.map(num => {
+      if (num % 2 === 1) {
+        number++
+      }
+    })
+
+
+    return number <= 1;
+  }

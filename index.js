@@ -425,8 +425,8 @@ Examples:
 "civil" should return false
 "livci" should return false
 
-Big O Time: O()
-Big O Space: O()
+Big O Time: O(n)
+Big O Space: O(n)
 */
 
 

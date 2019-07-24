@@ -476,3 +476,25 @@ An array of words has been rotated. Write a function to return the index of the 
 Big O Time: O()
 Big O Space: O()
 */
+
+function findRotationPoint(words) {
+
+  let middleIndex = Math.floor(words.length/2)
+  let firstWord = words[0].toLowerCase()
+  let middleWord = words[middleIndex].toLowerCase()
+
+  if(middleWord < words[middleIndex -1].toLowerCase()) {
+      return middleIndex
+    }
+
+  if (middleWord < firstWord ) {
+    return findRotationPoint(words.slice(0, middleIndex))
+  }
+
+  if (middleWord >= firstWord) {
+    return findRotationPoint(words.slice(middleIndex))
+  }
+
+  return false;
+}
+

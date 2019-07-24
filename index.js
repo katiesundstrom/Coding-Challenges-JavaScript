@@ -451,3 +451,28 @@ function hasPalindromePermutation(string) {
 
     return number <= 1;
   }
+
+
+    // ---------------------------------------------------------------
+
+/*
+
+An array of words has been rotated. Write a function to return the index of the rotation point.
+
+  const words = [
+  'ptolemaic',
+  'retrograde',
+  'supplant',
+  'undulate',
+  'xenoepist',
+  'asymptote',  // <-- rotates here!
+  'babka',
+  'banoffee',
+  'engender',
+  'karpatka',
+  'othellolagkage',
+];
+
+Big O Time: O()
+Big O Space: O()
+*/

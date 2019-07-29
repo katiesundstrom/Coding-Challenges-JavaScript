@@ -520,3 +520,31 @@ definitionOf('to', dictionary); // should return 'Expressing motion in the direc
 definitionOf('wizbing', dictionary); // should return undefined
 
 */
+
+definitionOf = (word, dict) => {
+  let dictLength = dict.length
+
+  if (dictLength === 0 || dictLength === 1 && !dictionary[0].startsWith(word)) {
+    return undefined
+  }
+
+  if (dictLength === 1 && dict[0].startsWith(word)) {
+    return dict[0].slice(dict[0].length+3, dict[0].length)
+  }
+
+  let middleIndex = Math.floor((dictLength)/2)
+  let middleWordAndDef = dict[middleIndex]
+  let middleWord = middleWordAndDef.slice(0, middleWordAndDef.indexOf(' '))
+
+  if(middleWord === word) {
+    // slice's second parameter is exclusive.
+    return middleWordAndDef.slice(middleWord.length+3, middleWordAndDef.length)
+  }
+
+  else if(middleWord > word) {
+    return definitionOf(word, dict.slice(0, middleIndex))
+  }
+  else if (middleWord < word) {
+    return definitionOf(word, dict.slice(middleIndex))
+  }
+}

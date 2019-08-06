@@ -587,6 +587,55 @@ pq.peek() // ==> 'Jill, concussion' // Bob has been removed from the PQ
 
 */
 
-// Naive, Linked List Approach
+/* Naive, Linked List Approach
+Big O Time:
+  peek: O(1)
+  popMax: O(1)
+  insert: O(n)
+Big O Space:O(n)
+*/
+
+
+class Node {
+  constructor(data, priority) {
+    this.data = data
+    this.priority = priority
+    this.next = null
+  }
+}
+
+class PriorityQueue {
+  constructor() {
+    this.first = null
+  }
+
+  insert(data, priority) {
+    let newNode = new Node(data, priority)
+    if(!this.first || this.first.priority <= priority) {
+      newNode.next = this.first.next
+      this.first = newNode
+    }
+    else {
+      let currentNode = this.first
+      while(currentNode.next && currentNode.next.priority >= priority) {
+        currentNode = currentNode.next
+      }
+      newNode.next = currentNode.next
+      currentNode.next = newNode
+    }
+  }
+
+  peek() {
+    return this.first.data
+  }
+
+  popMax() {
+    let max = this.first.data
+    this.first = this.first.next
+    return max
+  }
+}
+
+
 
 // Optimized, Heap Approach

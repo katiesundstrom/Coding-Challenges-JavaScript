@@ -521,6 +521,7 @@ definitionOf('wizbing', dictionary); // should return undefined
 
 */
 
+// RECURSIVE BINARY SEARCH SOLUTION
 definitionOf = (word, dict) => {
   let dictLength = dict.length
 
@@ -548,3 +549,44 @@ definitionOf = (word, dict) => {
     return definitionOf(word, dict.slice(middleIndex))
   }
 }
+
+// ITERATIVE BINARY SEARCH SOLUTION
+definitionOf(word, dict) {
+
+}
+
+// OPTIMIZED, CACHING BINARY SEARCH SOLUTION
+definitionOf(word, dict) {
+
+}
+
+    // ---------------------------------------------------------------
+
+/*
+
+Implement a priority queue with the following 3 methods:
+
+insert(data, priority) // inserts data into the priority queue with the given priority
+
+peek() // returns the value of the item with the highest priority without removing it from the priority queue
+
+popMax() // returns the value of the item with the highest priority and also removes it from the priority queue
+
+For the purposes of our implementation, "higher priority" corresponds to a higher integer value. Note, however, that this could be implemented either way.
+
+const pq = new PriorityQueue();
+pq.insert('Jill, concussion', 7);
+pq.insert('John, stomach pain', 5);
+pq.peek() // ==> 'Jill, concussion'
+pq.peek() // ==> 'Jill, concussion'  // Jill is still in the PQ
+pq.insert('Dave, sprained ankle', 1);
+pq.insert('Bob, breathing problems', 8)
+pq.peek() // ==> 'Bob, breathing problems'
+pq.popMax() // ==> 'Bob, breathing problems'
+pq.peek() // ==> 'Jill, concussion' // Bob has been removed from the PQ
+
+*/
+
+// Naive, Linked List Approach
+
+// Optimized, Heap Approach

@@ -636,6 +636,73 @@ class PriorityQueue {
   }
 }
 
-
-
 // Optimized, Heap Approach
+
+class PriorityQueueHeap {
+  constructor() {
+    this._items = []
+  }
+  _swap(childIdx, parentIdx) {
+    [this._items[childIdx], this._items[parentIdx]] = [this._items[parentIdx], this._items[childIdx]]
+  }
+
+  _parentIdx(childIdx) {
+    return Math.floor((childIdx-1)/2)
+  }
+
+  _childrenIndeces(parentIdx) {
+    return [parentIdx*2 +1, parentIdx*2 + 2]
+  }
+
+  _priority(idx) {
+    return this._items[idx].priority
+  }
+
+  insert(data, priority) {
+    this._items.push({data, priority})
+    this._heapifyUp()
+  }
+
+  _heapifyUp() {
+    let currentIdx = this._items.length -1
+    let currentIdx = this._items.length - 1;
+    while (currentIdx > 0 &&
+        this._items[currentIdx].priority >
+        this._items[this._parentIdx(currentIdx)].priority) {
+      this._swap(currentIdx, this._parentIdx(currentIdx));
+      currentIdx = this._parentIdx(currentIdx);
+    }
+  }
+
+  peek() {
+    return this._items[0].data
+  }
+
+  popMax() {
+    let max = this._items[0].data
+    this._items[0] = this._items.pop()
+    this._heapifyDown()
+    return max.data
+  }
+
+  _heapifyDown() {
+    let currentIdx = 0;
+    let [left, right] = this._childrenIndices(currentIdx);
+    let idxLarger;
+    const length = this._items.length;
+    while (left < length) {
+      if (right < length) {
+        idxLarger = this._priority(left) >= this._priority(right) ? left : right;
+      }
+      else idxLarger = left;
+
+      if (this._priority(currentIdx) < this._priority(idxLarger)) {
+        this._swap(idxLarger, currentIdx);
+        currentIdx = idxLarger;
+        [left, right] = this._childrenIndices(currentIdx);
+      }
+      else return;
+    }
+  }
+  }
+}

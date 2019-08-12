@@ -712,3 +712,29 @@ class PriorityQueueHeap {
 
 // Reverse an integer without converting it to a string (i.e. 123 -> 321 and 120 -> 21 and -54 -> -45)
 
+function reverseInt(int) {
+  if(int === 0) {
+    return 0
+  }
+  let reversedNum = 0;
+  let originalInt = int
+
+  if (originalInt < 0) {
+    int = int * (-1)
+  }
+  while(int >= 1) {
+    numToAdd = int % 10
+    reversedNum = reversedNum * 10 + numToAdd
+    int = Math.floor(int / 10)
+  }
+
+  if(originalInt < 0) {
+    reversedNum *= (-1)
+  }
+
+  return reversedNum
+}
+
+console.log(reverseInt(123))
+console.log(reverseInt(120))
+console.log(reverseInt(-54))

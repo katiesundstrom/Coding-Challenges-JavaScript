@@ -712,6 +712,12 @@ class PriorityQueueHeap {
 
 // Reverse an integer without converting it to a string (i.e. 123 -> 321 and 120 -> 21 and -54 -> -45)
 
+/*
+Big O Time: O(n)
+Big O Space:O(1)
+*/
+
+
 function reverseInt(int) {
   if(int === 0) {
     return 0

@@ -685,24 +685,30 @@ class PriorityQueueHeap {
     return max.data
   }
 
-  _heapifyDown() {
-    let currentIdx = 0;
-    let [left, right] = this._childrenIndices(currentIdx);
-    let idxLarger;
-    const length = this._items.length;
-    while (left < length) {
-      if (right < length) {
-        idxLarger = this._priority(left) >= this._priority(right) ? left : right;
-      }
-      else idxLarger = left;
+//   _heapifyDown() {
+//     let currentIdx = 0;
+//     let [left, right] = this._childrenIndices(currentIdx);
+//     let idxLarger;
+//     const length = this._items.length;
+//     while (left < length) {
+//       if (right < length) {
+//         idxLarger = this._priority(left) >= this._priority(right) ? left : right;
+//       }
+//       else idxLarger = left;
 
-      if (this._priority(currentIdx) < this._priority(idxLarger)) {
-        this._swap(idxLarger, currentIdx);
-        currentIdx = idxLarger;
-        [left, right] = this._childrenIndices(currentIdx);
-      }
-      else return;
-    }
-  }
-  }
-}
+//       if (this._priority(currentIdx) < this._priority(idxLarger)) {
+//         this._swap(idxLarger, currentIdx);
+//         currentIdx = idxLarger;
+//         [left, right] = this._childrenIndices(currentIdx);
+//       }
+//       else return;
+//     }
+//   }
+//   }
+// }
+
+
+    // ---------------------------------------------------------------
+
+// Reverse an integer without converting it to a string (i.e. 123 -> 321 and 120 -> 21 and -54 -> -45)
+

@@ -746,3 +746,19 @@ console.log(reverseInt(120))
 console.log(reverseInt(-54))
 
 // Return all duplicate numbers in an array
+
+returnDups = (array) => {
+  let arraySet = new Set()
+  let dupSet = new Set()
+  for(let i = 0; i < array.length; i++) {
+    if(!arraySet.has(array[i])){
+      arraySet.add(array[i])
+    }
+    else {
+      dupSet.add(array[i])
+    }
+  }
+  return dupSet
+}
+
+returnDups([5, 4, 3, 2, 1, 5, 6, 4, 2, 11, 11])

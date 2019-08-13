@@ -747,6 +747,8 @@ console.log(reverseInt(-54))
 
 // Return all duplicate numbers in an array
 
+// O(n) time, O(n) space
+
 returnDups = (array) => {
   let arraySet = new Set()
   let dupSet = new Set()

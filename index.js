@@ -744,3 +744,5 @@ function reverseInt(int) {
 console.log(reverseInt(123))
 console.log(reverseInt(120))
 console.log(reverseInt(-54))
+
+// Return all duplicate numbers in an array

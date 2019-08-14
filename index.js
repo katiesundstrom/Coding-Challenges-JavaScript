@@ -774,7 +774,12 @@ intersection([1,4,9,10,11], [2,3,4,5,8,10]); // should return [4, 10]
 
 */
 
-function intersection (arrA, arrB) {
+/*
+O(n + m) time complexity
+O(n) space complexity
+*/
+
+function intersection(arrA, arrB) {
   const duplicates = [];
   while (i < arrA.length && j < arrB.length) {
     if (arrA[i] === arrB[j]) {
@@ -789,3 +794,4 @@ function intersection (arrA, arrB) {
   }
   return duplicates;
 }
+

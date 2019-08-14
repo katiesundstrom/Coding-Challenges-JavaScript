@@ -765,6 +765,27 @@ returnDups = (array) => {
 
 returnDups([5, 4, 3, 2, 1, 5, 6, 4, 2, 11, 11])
 
-// Prompt: Given two sorted arrays of numbers, return an array containing all values that appear in both arrays. The numbers in the resulting array (the "intersection") may be returned in any order; they needn't be sorted. You can assume that each array has only unique values.
+/* Prompt: Given two sorted arrays of numbers, return an array containing all values that appear in both arrays. The numbers in the resulting array (the "intersection") may be returned in any order; they needn't be sorted. You can assume that each array has only unique values.
 
+Example involving two sorted arrays:
 
+intersection([1,4,9,10,11], [2,3,4,5,8,10]); // should return [4, 10]
+(numbers can be in any order)
+
+*/
+
+function intersection (arrA, arrB) {
+  const duplicates = [];
+  while (i < arrA.length && j < arrB.length) {
+    if (arrA[i] === arrB[j]) {
+      duplicates.push(arrA[i]);
+    }
+    if (arrA[i] <= arrB[j]) {
+      i++;
+    }
+    if (arrA[i] >= arrB[j]) {
+      j++;
+    }
+  }
+  return duplicates;
+}

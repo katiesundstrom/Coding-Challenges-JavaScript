@@ -764,3 +764,7 @@ returnDups = (array) => {
 }
 
 returnDups([5, 4, 3, 2, 1, 5, 6, 4, 2, 11, 11])
+
+// Prompt: Given two sorted arrays of numbers, return an array containing all values that appear in both arrays. The numbers in the resulting array (the "intersection") may be returned in any order; they needn't be sorted. You can assume that each array has only unique values.
+
+

@@ -745,6 +745,8 @@ console.log(reverseInt(123))
 console.log(reverseInt(120))
 console.log(reverseInt(-54))
 
+    // ---------------------------------------------------------------
+
 // Return all duplicate numbers in an array
 
 // O(n) time, O(n) space
@@ -765,6 +767,9 @@ returnDups = (array) => {
 
 returnDups([5, 4, 3, 2, 1, 5, 6, 4, 2, 11, 11])
 
+
+    // ---------------------------------------------------------------
+
 /* Prompt: Given two sorted arrays of numbers, return an array containing all values that appear in both arrays. The numbers in the resulting array (the "intersection") may be returned in any order; they needn't be sorted. You can assume that each array has only unique values.
 
 Example involving two sorted arrays:
@@ -779,6 +784,7 @@ O(n + m) time complexity
 O(n) space complexity
 */
 
+// ratcheting technique assumes the arrays are sorted.
 function intersection(arrA, arrB) {
   const duplicates = [];
   while (i < arrA.length && j < arrB.length) {
@@ -795,3 +801,12 @@ function intersection(arrA, arrB) {
   return duplicates;
 }
 
+// Optimized Solution for Unsorted Arrays
+    function intersection (arrA, arrB) {
+      const smaller = arrB.length < arrA.length ? arrB : arrA;
+      const larger = arrB.length >= arrA.length ? arrB : arrA;
+
+      const smallerArraySet = new Set(smaller);
+
+      return larger.filter(el => smallerArraySet.has(el));
+    }

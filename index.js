@@ -801,7 +801,13 @@ function intersection(arrA, arrB) {
   return duplicates;
 }
 
-// Optimized Solution for Unsorted Arrays
+/* Optimized Solution for Unsorted Arrays
+
+Big O
+Time: O(n)
+Space: O(n)
+*/
+
     function intersection (arrA, arrB) {
       const smaller = arrB.length < arrA.length ? arrB : arrA;
       const larger = arrB.length >= arrA.length ? arrB : arrA;

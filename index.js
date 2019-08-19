@@ -849,3 +849,19 @@ Rows and columns are 1-indexed (not zero-indexed).
 
 */
 
+wheresWaldo = (matrix) => {
+  if(matrix[0][0] === matrix[0][1]) {
+    let char = matrix[0][0]
+  }
+  else {
+    let char = matrix[0][2]
+  }
+  for(let i = 0; i < matrix.length; i++) {
+    for(let j = 0; j < matrix[i].length; j++) {
+      if (matrix[i][j] !== char) {
+        return [i+1, j+1]
+      }
+    }
+  }
+}
+

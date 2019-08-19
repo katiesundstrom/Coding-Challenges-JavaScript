@@ -847,6 +847,10 @@ whereIsWaldo([
 Notes
 Rows and columns are 1-indexed (not zero-indexed).
 
+Big O:
+Time: O(n^2)
+Space: O(1)
+
 */
 
 wheresWaldo = (matrix) => {

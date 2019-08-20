@@ -875,6 +875,10 @@ wheresWaldo = (matrix) => {
 
 Prompt: Given a string and a number indicating the point of rotation, return the rotated string.
 
+Big O:
+Time: O(1)
+Space: O(1)
+
 */
 
 function rotateString(string, d) {

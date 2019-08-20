@@ -869,3 +869,12 @@ wheresWaldo = (matrix) => {
   }
 }
 
+// ---------------------------------------------------------------
+
+/*
+
+Prompt: Given a string and a number indicating the point of rotation, return the rotated string.
+
+*/
+
+

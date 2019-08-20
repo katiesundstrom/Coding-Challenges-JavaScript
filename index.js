@@ -877,4 +877,14 @@ Prompt: Given a string and a number indicating the point of rotation, return the
 
 */
 
+function rotateString(string, d) {
 
+  d = d % string.length
+
+  let firstHalf = string.slice(d)
+  let secondHalf = string.slice(0, d)
+  let rotatedLetters = firstHalf.concat(secondHalf)
+  return rotatedLetters
+}
+
+rotateString('Microsoft', 5)

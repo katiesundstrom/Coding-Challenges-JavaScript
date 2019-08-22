@@ -892,3 +892,18 @@ function rotateString(string, d) {
 }
 
 rotateString('Microsoft', 5)
+
+// ---------------------------------------------------------------
+/*
+
+Prompt: Given an nxn dimensional matrix m and an integer k, rotate the nondiagonal values of the matrix clockwise k times
+
+each rotation is 90 degrees clockwise
+
+return the newly rotated matrix
+
+Big O:
+Time: O()
+Space: O()
+
+*/

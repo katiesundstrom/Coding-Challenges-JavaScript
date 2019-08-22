@@ -903,8 +903,8 @@ each rotation is 90 degrees clockwise
 return the newly rotated matrix
 
 Big O:
-Time: O()
-Space: O()
+Time: O(n^2)
+Space: O(1)
 
 */
 function rotateMatrixWithoutDiagonals(matrix, num){
@@ -927,7 +927,7 @@ function rotateMatrixWithoutDiagonals(matrix, num){
           matrix[i][j] = left;
           matrix[matrix.length - 1 - j][i] = bottom
           matrix[matrix.length - 1 - i][m.length - 1 - j] = right;
-          matrix[j][matrix.length - 1 - i] = top; 
+          matrix[j][matrix.length - 1 - i] = top;
         }
     }
     num--;

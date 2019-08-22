@@ -907,3 +907,30 @@ Time: O()
 Space: O()
 
 */
+function rotateMatrixWithoutDiagonals(matrix, num){
+  num %= 4;
+
+  if(matrix.length < 3 || num === 0){
+    return matrix;
+  }
+
+    while(num > 0){
+      for(let i = 0; i < Math.floor(matrix.length/2); i++){
+        for(let j = i + 1; j < matrix.length - 1 - i; j++){
+          // store elements
+          let top = matrix[i][j];
+          let left = matrix[matrix.length - 1 - j][i];
+          let bottom = matrix[matrix.length - 1 - i][matrix.length - 1 - j];
+          let right = matrix[j][matrix.length - 1 - i];
+
+          // reassign elements
+          matrix[i][j] = left;
+          matrix[matrix.length - 1 - j][i] = bottom
+          matrix[matrix.length - 1 - i][m.length - 1 - j] = right;
+          matrix[j][matrix.length - 1 - i] = top; 
+        }
+    }
+    num--;
+  }
+return matrix;
+}

@@ -934,3 +934,15 @@ function rotateMatrixWithoutDiagonals(matrix, num){
   }
 return matrix;
 }
+
+// ---------------------------------------------------------------
+/*
+
+Prompt: Given an an array of numbers, find the length of the longest possible subsequence that is increasing. This subsequence can "jump" over numbers in the array. For example in [3, 10, 4, 5] the longest increasing subsequence (LIS) is [3, 4, 5].
+
+
+Big O:
+Time: O()
+Space: O()
+
+*/

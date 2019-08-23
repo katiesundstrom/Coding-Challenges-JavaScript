@@ -942,8 +942,8 @@ Prompt: Given an an array of numbers, find the length of the longest possible su
 
 
 Big O:
-Time: O()
-Space: O()
+Time: O(n)
+Space: O(n)
 
 */
 

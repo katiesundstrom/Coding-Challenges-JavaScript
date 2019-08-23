@@ -946,3 +946,20 @@ Time: O()
 Space: O()
 
 */
+
+function maximumIncreasingSubsequence(array) {
+  const lengths = new Array(array.length).fill(1);
+
+  for (let i = 1; i < array.length; i++) {
+    for (let j = 0; j < i; j++) {
+      const isIncreasing = array[j] < array[i];
+      const sequenceLength = lengths[j] + 1;
+      const isLonger = sequenceLength > lengths[i];
+
+      if (isIncreasing && isLonger) {
+        lengths[i] = sequenceLength;
+      }
+    }
+  }
+  return Math.max(...lengths);
+}

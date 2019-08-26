@@ -986,5 +986,14 @@ Space: O()
 */
 
 function doesPathExist(graph, node1, node2, seen = new Set()) {
-  
+  if(!seen.has(node1)) {
+    seen.add(node1)
+    for(let i = 0; i < graph[node1].length; i++) {
+      if (graph[node1][i] === node2) return true
+      else {
+        return doesPathExist(graph, graph[node1][i], node2, seen)
+        }
+    }
+  }
+return false
 }

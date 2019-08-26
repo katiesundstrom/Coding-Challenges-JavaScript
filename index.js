@@ -980,8 +980,8 @@ In the example below, there is a connection from vertex a to vertex b and a conn
 }
 
 Big O:
-Time: O()
-Space: O()
+Time: O(V + E) where V = number of vertices and E = number of edges
+Space: O(V)
 
 */
 

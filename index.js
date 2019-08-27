@@ -1015,8 +1015,28 @@ Space: O()
 
 Prompt: Given an array of stock prices, write a function that returns the max profit you can make from buying and selling once.
 
-Big O:
-Time: O()
+Brute Force Solution Big O:
+Time: O(n^2)
 Space: O()
 
 */
+
+function maxProfit(stockPrices) {
+  let maxProfit = 0;
+  for(let i = 0; i < stockPrices.length -1; i++) {
+    for(let j = i+1; j < stockPrices.length; j++) {
+      maxProfit = Math.max((array[j] - array[i]), maxProfit)
+    }
+  }
+  return maxProfit
+}
+
+/*
+Optimized Solution Big O:
+Time: O(n)
+Space: O()
+*/
+
+function optimizedMaxProfit(stockPrices) {
+
+}

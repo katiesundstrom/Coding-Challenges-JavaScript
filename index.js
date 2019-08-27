@@ -1010,3 +1010,13 @@ Space: O()
 
 */
 
+
+/* ---------------------------------------------------------------
+
+Prompt: Given an array of stock prices, write a function that returns the max profit you can make from buying and selling once.
+
+Big O:
+Time: O()
+Space: O()
+
+*/

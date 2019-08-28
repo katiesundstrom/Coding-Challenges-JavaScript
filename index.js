@@ -1034,7 +1034,7 @@ function maxProfit(stockPrices) {
 /*
 Optimized Solution Big O:
 Time: O(n)
-Space: O()
+Space: O(1)
 */
 
 function optimizedMaxProfit(stockPrices) {

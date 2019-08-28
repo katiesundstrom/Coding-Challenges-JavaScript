@@ -1017,7 +1017,7 @@ Prompt: Given an array of stock prices, write a function that returns the max pr
 
 Brute Force Solution Big O:
 Time: O(n^2)
-Space: O()
+Space: O(1)
 
 */
 
@@ -1038,5 +1038,13 @@ Space: O()
 */
 
 function optimizedMaxProfit(stockPrices) {
-
+  let maxProfit = 0
+  let minPrice = Infinity
+  for(let i = 0; i < stockPrices.length; i++) {
+    if(stockPrices[i] < minPrice) minPrice = stockPrices[i]
+    else if ((stockPrices[i] - minPrice) > maxProfit) {
+      maxProfit = stockPrices[i] - minPrice
+    }
+  }
+  return maxProfit
 }

@@ -1005,8 +1005,8 @@ Prompt: Given a string, return an array of all the permutations of that string. 
 The array that is returned should only contain unique values and its elements should be in alphabetical order.
 
 Big O:
-Time: O()
-Space: O()
+Time: O(n!)
+Space: O(n!)
 
 */
 

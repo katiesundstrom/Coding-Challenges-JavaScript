@@ -1010,6 +1010,32 @@ Space: O()
 
 */
 
+function stringPermutations(str) {
+  let permutations = [];
+  let letters = str.split('');
+  permutations.push([letters.shift()]); //add first letter (as an array) to permutations
+  while (letters.length) {
+    let currLetter = letters.shift();
+    let tempPermutations = [];
+    permutations.forEach(function(currResult) {
+      for (let i = 0; i <= currResult.length; i++) {
+        let temp = currResult.slice(); //make copy so we can modify it
+        //insert the letter at the current position
+        temp.splice(i, 0, currLetter);
+        tempPermutations.push(temp);
+      }
+    });
+    permutations = tempPermutations; //overwrite the previous permutations
+  }
+  return permutations
+    .map(function(letterArr) {
+      return letterArr.join('');
+    })
+    .filter(function(el, index, self) {
+      return self.indexOf(el) === index; //filter out non-unique words
+    })
+    .sort();
+}
 
 /* ---------------------------------------------------------------
 

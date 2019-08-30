@@ -1085,3 +1085,24 @@ Time: O()
 Space: O()
 
 */
+
+/* ---------------------------------------------------------------
+
+Prompt: const mkNode = (value, next = null) => ({ value, next })
+const nums = mkNode(1, mkNode(2, mkNode(3)))
+Given a linked list with .value (first value) and .next (remaining list) interface, log the values in reverse order.
+Write a function which returns a new reversed linked list.
+Restrictions:
+
+no mutation at all, 100% pure (except for console.log in Part 1)
+no built-in data structures or methods, only variables / functions / control flow
+no arrays, no objects except the (immutable) list nodes themselves
+no iterables or iteration protocol (for-of, ...)
+
+
+Big O:
+Time: O()
+Space: O()
+
+*/
+

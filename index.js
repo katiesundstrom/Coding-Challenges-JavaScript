@@ -1080,8 +1080,8 @@ function optimizedMaxProfit(stockPrices) {
 Prompt: Write a function that takes in a string and returns the count of each character.
 
 Big O:
-Time: O()
-Space: O()
+Time: O(n)
+Space: O(n)
 
 */
 

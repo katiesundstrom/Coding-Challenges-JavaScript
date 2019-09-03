@@ -1085,7 +1085,16 @@ Space: O()
 
 */
 
-
+function charCount(string) {
+  let count = {}
+  for (let char of string) {
+    if(/[a-z0-9]/.test(char)) {
+      // if object[char] evaluates to truthy, it will be incremented. If not, the code after the || will run
+      count[char] = ++count[char] || 1
+    }
+  }
+  return count
+}
 
 /* ---------------------------------------------------------------
 

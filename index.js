@@ -1077,6 +1077,18 @@ function optimizedMaxProfit(stockPrices) {
 
 /* ---------------------------------------------------------------
 
+Prompt: Write a function that takes in a string and returns the count of each character.
+
+Big O:
+Time: O()
+Space: O()
+
+*/
+
+
+
+/* ---------------------------------------------------------------
+
 Prompt: Currying is the process by which a function of N arguments is implemented as N single-argument functions such that first of them takes in the first argument and returns a function which takes in the 2nd argument and so on, until the Nth single-argument function finally returns the value of the multi-argument function being implemented. Write a function called curry that takes a function as an argument, and returns a "curried" version of that function
 
 
